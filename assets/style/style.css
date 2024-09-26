@@ -28,3 +28,14 @@
   background-position: center;
   min-height: 30dvh;
 }
+
+.delete-gift-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+.gift:hover .delete-gift-button {
+  display: unset;
+}
