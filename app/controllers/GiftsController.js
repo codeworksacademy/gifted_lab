@@ -19,6 +19,15 @@ export class GiftsController {
     }
   }
 
+  async openGift(giftId) {
+    try {
+      await giftsService.openGift(giftId)
+    } catch (error) {
+      Pop.error(error)
+      console.error(error);
+    }
+  }
+
   hidePlaceholder() {
     document.getElementById('placeholder-main').classList.add('d-none')
     document.getElementById('gifts-main').classList.remove('d-none')
