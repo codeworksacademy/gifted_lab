@@ -40,51 +40,47 @@
   </header>
 
   <!-- SECTION -->
-  <main>
+  <main class="container-fluid d-flex flex-column">
     <!-- placeholder for users that are not logged in -->
-    <div id="placeholder-main" class="container-fluid">
-      <section class="row">
-        <div class="col-12">
-          <div class="text-center">
-            <h1 class="my-5">
-              Please
-              <button onclick="app.AuthController.login()"" class=" btn btn-success fs-2">
-                Log In
-              </button>
-              To Get your Gifts!
-            </h1>
-            <img src="/assets/img/undraw_gifts.svg" alt="Person surrounded my gifts" class="img-fluid">
-          </div>
+    <section id="placeholder-main" class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <h1 class="my-5">
+            Please
+            <button onclick="app.AuthController.login()"" class=" btn btn-success fs-2">
+              Log In
+            </button>
+            To Get your Gifts!
+          </h1>
+          <img src="/assets/img/undraw_gifts.svg" alt="Person surrounded my gifts" class="img-fluid">
+        </div>
+      </div>
+    </section>
+    <!-- this will be hidden until the user is logged in -->
+    <div id="gifts-main" class="row flex-grow-1 align-items-stretch d-none">
+      <section class="col-md-3 p-0 ">
+        <div class="bg-success h-100 p-3 text-light form-section">
+          <form onsubmit="app.GiftsController.createGift()" class="sticky-top">
+            <div class="mb-3">
+              <label for="tag" class="form-label">Tag</label>
+              <input type="text" class="form-control" name="tag" id="tag" required maxlength="120">
+            </div>
+            <div class="mb-3">
+              <label for="url" class="form-label">Url</label>
+              <input type="url" class="form-control" name="url" id="url" required maxlength="500">
+            </div>
+            <div class="text-end">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+            <hr>
+          </form>
         </div>
       </section>
-      <!-- this will be hidden until the user is logged in -->
-    </div>
-    <div id="gifts-main" class="container-fluid d-none">
-      <div class="row">
-        <section class="col-md-3 p-0">
-          <div class="bg-success h-100 p-3 text-light form-section">
-            <form onsubmit="app.GiftsController.createGift()">
-              <div class="mb-3">
-                <label for="tag" class="form-label">Tag</label>
-                <input type="text" class="form-control" name="tag" id="tag" required maxlength="120">
-              </div>
-              <div class="mb-3">
-                <label for="url" class="form-label">Url</label>
-                <input type="url" class="form-control" name="url" id="url" required maxlength="500">
-              </div>
-              <div class="text-end">
-                <button class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-            <hr>
-          </div>
-        </section>
-        <section class="col-md-9 p-5">
-          <div id="gifts" class="row">
-            <!-- gifts draw here! -->
-          </div>
-        </section>
-      </div>
+      <section class="col-md-9 p-5">
+        <div id="gifts" class="row">
+          <!-- gifts draw here! -->
+        </div>
+      </section>
     </div>
 
   </main>

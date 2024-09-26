@@ -7,7 +7,7 @@ import { setHTML } from "../utils/Writer.js";
 export class GiftsController {
   constructor() {
     AppState.on('user', this.hidePlaceholder)
-    // AppState.on('user', this.getGifts)
+    AppState.on('account', this.getGifts)
     AppState.on('gifts', this.drawGifts)
   }
 

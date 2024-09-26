@@ -12,7 +12,7 @@ export class Gift {
   get openedHTMLTemplate() {
     return `
       <div class="col-md-4 mb-3">
-        <div class="p-2 shadow position-relative gift">
+        <div class="p-2 m-2 shadow position-relative gift">
           <img src="${this.url}" alt="Gift alt" class="gift-img">
           <p class="text-center fw-bold mb-0 mt-1">${this.tag}</p>
           ${this.deleteButton}
@@ -24,7 +24,7 @@ export class Gift {
   get closedHTMLTemplate() {
     return `
     <div class="col-md-4 mb-3">
-      <div class="d-flex justify-content-center align-items-center h-100 gift-placeholder p-4 shadow positon-relative gift"
+      <div class="d-flex justify-content-center align-items-center h-100 gift-placeholder m-2 p-4 shadow positon-relative gift"
         style="background-image: url(${this.url});">
         <div onclick="app.GiftsController.openGift('${this.id}')" class="bg-secondary w-100 p-1 text-center selectable" role="button" title="Open this gift!">
           <p class="fw-bold">${this.tag}</p>
