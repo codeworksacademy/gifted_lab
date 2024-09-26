@@ -10,6 +10,9 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
     integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kreon&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>gifted</title>
@@ -18,11 +21,9 @@
 <body>
   <!-- SECTION -->
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
+    <nav class="navbar navbar-dark navbar-expand bg-success text-light px-4">
       <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ml-2">gifted</span>
+        <span class="kreon fs-3">Gifted</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,11 +41,35 @@
 
   <!-- SECTION -->
   <main>
-    
+    <!-- placeholder for users that are not logged in -->
+    <div id="placeholder-main" class="container-fluid">
+      <section class="row">
+        <div class="col-12">
+          <div class="text-center">
+            <h1 class="my-5">
+              Please
+              <button onclick="app.AuthController.login()"" class=" btn btn-success fs-2">
+                Log In
+              </button>
+              To Get your Gifts!
+            </h1>
+            <img src="/assets/img/undraw_gifts.svg" alt="Person surrounded my gifts" class="img-fluid">
+          </div>
+        </div>
+      </section>
+      <!-- this will be hidden until the user is logged in -->
+      <div id="gifts-main" class="container-fluid d-none">
+        <div class="row">
+          <section class="col-md-4"></section>
+          <section class="col-md-8"></section>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- SECTION -->
-  <footer class="bg-dark text-light">
+  <footer class="bg-success text-light">
     <div class="text-center no-select">
       <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
     </div>
